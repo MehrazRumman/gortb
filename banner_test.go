@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestBanner_Validate(t *testing.T) {
+func TestBanner(t *testing.T) {
 	tests := []struct {
 		name    string
 		banner  *Banner

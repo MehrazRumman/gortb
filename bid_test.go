@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestBid_Validate(t *testing.T) {
+func TestBid(t *testing.T) {
 	tests := []struct {
 		name    string
 		bid     *Bid

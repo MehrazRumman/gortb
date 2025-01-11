@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestDealValidate(t *testing.T) {
+func TestDeal(t *testing.T) {
 	tests := []struct {
 		name    string
 		deal    *Deal
