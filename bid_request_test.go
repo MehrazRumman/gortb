@@ -3,6 +3,7 @@ package gortb
 import (
 	"testing"
 	"errors"
+	"encoding/json"
 )
 
 func TestBidRequest(t *testing.T) {
@@ -112,5 +113,31 @@ func TestBidRequest(t *testing.T) {
 				t.Errorf("BidRequest.Validate() error = %v, wantErr = nil", err)
 			}
 		})
+	}
+}
+
+
+func TestBidRequestWithJSON(t *testing.T) {
+	jsonData := `{
+		"id": "test-id",
+		"imp": [
+			{
+				"id": "1",
+				"banner": {}
+			}
+		],
+		"site": {}
+	}`
+
+	var request BidRequest
+	err := json.Unmarshal([]byte(jsonData), &request)
+	if err != nil {
+		t.Fatalf("Failed to unmarshal JSON: %v", err)
+	}
+
+	// Validate the BidRequest
+	err = request.Validate()
+	if err != nil {
+		t.Errorf("BidRequest.Validate() error = %v, wantErr = nil", err)
 	}
 }
