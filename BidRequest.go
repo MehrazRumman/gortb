@@ -1,8 +1,8 @@
 package gortb
 
 import (
-    "encoding/json"
 	"errors"
+	"fmt"
 )
 
 // Validation errors for bid requests
@@ -62,6 +62,50 @@ type BidRequest struct {
 	Ext      interface{}  `json:"ext,omitempty"`
 }
 
+// Validate performs validation on the BidRequest object according to OpenRTB 2.5 rules
+func (br *BidRequest) Validate() error {
+	// Check required fields
+	if br.ID == "" {
+		return ErrMissingID
+	}
+	if len(br.Imp) == 0 {
+		return ErrMissingImp
+	}
+
+	// Cannot have both site and app
+	if br.Site != nil && br.App != nil {
+		return ErrSiteAndApp
+	}
+
+	// Must have either site or app
+	if br.Site == nil && br.App == nil {
+		return errors.New("bid request must contain either site or app")
+	}
+
+	// Validate test field
+	if br.Test != 0 && br.Test != 1 {
+		return ErrInvalidTest
+	}
+
+	// Validate auction type
+	if br.At != 0 && br.At != 1 && br.At != 2 {
+		return ErrInvalidAt
+	}
+
+	// Validate allimps field
+	if br.AllImps != 0 && br.AllImps != 1 {
+		return ErrInvalidAllImps
+	}
+
+	// Validate each impression
+	for _, imp := range br.Imp {
+		if err := imp.Validate(); err != nil {
+			return fmt.Errorf("invalid impression: %v", err)
+		}
+	}
+
+	return nil
+}
 
 
 
