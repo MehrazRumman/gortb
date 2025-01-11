@@ -40,6 +40,14 @@ Thank you for your interest in contributing to Gortb! This document provides gui
 5. Link any relevant issues
 6. Wait for review and address any feedback
 
+## Testing
+
+To run the tests:
+
+```bash
+go test ./...
+```
+
 ## Reporting Issues
 
 - Use the GitHub issue tracker
