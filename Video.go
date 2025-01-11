@@ -1,5 +1,10 @@
 package gortb
 
+var (
+	ErrMissingMIMEs = errors.New("video mimes are required")
+	ErrMissingDimensions = errors.New("video width and height are required")
+)
+
 type Video struct {
 	MIMEs        []string `json:"mimes" binding:"required"`
 	MinDuration  int      `json:"minduration,omitempty"`
@@ -28,4 +33,17 @@ type Video struct {
 	API          []int    `json:"api,omitempty"`
 	CompanionType []int   `json:"companiontype,omitempty"`
 	Ext          interface{} `json:"ext,omitempty"`
+}
+
+// Validate checks if the Video object meets OpenRTB requirements
+func (v *Video) Validate() error {
+	if len(v.MIMEs) == 0 {
+		return ErrMissingMIMEs
+	}
+
+	if v.W == 0 || v.H == 0 {
+		return ErrMissingDimensions
+	}
+
+	return nil
 }

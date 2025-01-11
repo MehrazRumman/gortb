@@ -44,20 +44,6 @@ func (a *App) Validate() error {
 	if a.Paid != 0 && a.Paid != 1 {
 		return ErrInvalidPaid
 	}
-
-	// Validate publisher if present
-	if a.Publisher != nil {
-		if err := a.Publisher.Validate(); err != nil {
-			return err
-		}
-	}
-
-	// Validate content if present
-	if a.Content != nil {
-		if err := a.Content.Validate(); err != nil {
-			return err
-		}
-	}
-
+	
 	return nil
 }

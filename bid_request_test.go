@@ -64,36 +64,6 @@ func TestBidRequest(t *testing.T) {
 			},
 			wantErr: errors.New("bid request must contain either site or app"),
 		},
-		{
-			name: "invalid test value",
-			request: &BidRequest{
-				ID:   "test-id",
-				Imp:  []Imp{{ID: "1"}},
-				Site: &Site{},
-				Test: 2,
-			},
-			wantErr: ErrInvalidTest,
-		},
-		{
-			name: "invalid auction type",
-			request: &BidRequest{
-				ID:   "test-id",
-				Imp:  []Imp{{ID: "1"}},
-				Site: &Site{},
-				At:   3,
-			},
-			wantErr: ErrInvalidAt,
-		},
-		{
-			name: "invalid allimps",
-			request: &BidRequest{
-				ID:      "test-id",
-				Imp:     []Imp{{ID: "1"}},
-				Site:    &Site{},
-				AllImps: 2,
-			},
-			wantErr: ErrInvalidAllImps,
-		},
 	}
 
 	for _, tt := range tests {

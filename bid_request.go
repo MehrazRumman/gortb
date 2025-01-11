@@ -9,9 +9,6 @@ import (
 var (
 	ErrMissingID = errors.New("bid request missing required ID")
 	ErrMissingImp = errors.New("bid request missing required impressions")
-	ErrInvalidTest = errors.New("bid request test field must be 0 or 1")
-	ErrInvalidAt = errors.New("bid request at (auction type) must be 1 or 2")
-	ErrInvalidAllImps = errors.New("bid request allimps field must be 0 or 1")
 	ErrSiteAndApp = errors.New("bid request cannot contain both site and app")
 )
 
@@ -80,21 +77,6 @@ func (br *BidRequest) Validate() error {
 	// Must have either site or app
 	if br.Site == nil && br.App == nil {
 		return errors.New("bid request must contain either site or app")
-	}
-
-	// Validate test field
-	if br.Test != 0 && br.Test != 1 {
-		return ErrInvalidTest
-	}
-
-	// Validate auction type
-	if br.At != 0 && br.At != 1 && br.At != 2 {
-		return ErrInvalidAt
-	}
-
-	// Validate allimps field
-	if br.AllImps != 0 && br.AllImps != 1 {
-		return ErrInvalidAllImps
 	}
 
 	// Validate each impression

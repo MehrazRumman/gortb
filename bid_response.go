@@ -8,7 +8,6 @@ import (
 var (
 	ErrMissingResponseID = errors.New("bid response missing required ID")
 	ErrMissingSeatBids = errors.New("bid response missing required seat bids")
-	ErrInvalidNBR = errors.New("bid response NBR must be between 0 and 10")
 )
 
 type BidResponse struct {
@@ -31,11 +30,6 @@ func (br *BidResponse) Validate() error {
 	// Check required SeatBids field
 	if len(br.SeatBids) == 0 {
 		return ErrMissingSeatBids
-	}
-
-	// Validate NBR if present (values 0-10 are valid)
-	if br.NBR != 0 && (br.NBR < 0 || br.NBR > 10) {
-		return ErrInvalidNBR
 	}
 
 	// Validate each SeatBid

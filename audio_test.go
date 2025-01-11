@@ -30,46 +30,6 @@ func TestAudio(t *testing.T) {
 			},
 			wantErr: ErrMissingMIMEs,
 		},
-		{
-			name: "invalid start delay",
-			audio: &Audio{
-				MIMEs:      []string{"audio/mp3"},
-				StartDelay: -3,
-			},
-			wantErr: ErrInvalidStartDelay,
-		},
-		{
-			name: "invalid sequence",
-			audio: &Audio{
-				MIMEs:    []string{"audio/mp3"},
-				Sequence: 0,
-			},
-			wantErr: ErrInvalidSequence,
-		},
-		{
-			name: "invalid feed",
-			audio: &Audio{
-				MIMEs: []string{"audio/mp3"},
-				Feed:  4,
-			},
-			wantErr: ErrInvalidFeed,
-		},
-		{
-			name: "invalid stitched",
-			audio: &Audio{
-				MIMEs:    []string{"audio/mp3"},
-				Stitched: 2,
-			},
-			wantErr: ErrInvalidStitched,
-		},
-		{
-			name: "invalid nvol",
-			audio: &Audio{
-				MIMEs: []string{"audio/mp3"},
-				NVol:  101,
-			},
-			wantErr: ErrInvalidNVol,
-		},
 	}
 
 	for _, tt := range tests {

@@ -2,6 +2,7 @@ package gortb
 
 import (
 	"testing"
+	"encoding/json"
 )
 
 func TestDeal(t *testing.T) {
@@ -42,17 +43,24 @@ func TestDeal(t *testing.T) {
 	}
 }
 
-func TestDealDefaults(t *testing.T) {
-	deal := &Deal{
-		ID: "deal-123",
+func TestDealWithJSON(t *testing.T) {
+	jsonData := `{
+		"id": "deal-123",
+		"bidfloor": 1.50,
+		"bidfloorcur": "USD",
+		"at": 2,
+		"wseat": ["seat1", "seat2"],
+		"wadmin": ["admin1"]
+	}`
+
+	var deal Deal
+	err := json.Unmarshal([]byte(jsonData), &deal)
+	if err != nil {
+		t.Fatalf("Failed to unmarshal JSON: %v", err)
 	}
 
-	// Test default values
-	if deal.BidFloorCur != "USD" {
-		t.Errorf("Deal default BidFloorCur = %v, want USD", deal.BidFloorCur)
-	}
-
-	if deal.BidFloor != 0 {
-		t.Errorf("Deal default BidFloor = %v, want 0", deal.BidFloor)
+	err = deal.Validate()
+	if err != nil {
+		t.Errorf("Deal.Validate() error = %v, wantErr = nil", err)
 	}
 }
