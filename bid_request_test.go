@@ -15,7 +15,7 @@ func TestBidRequest(t *testing.T) {
 			name: "valid request with site",
 			request: &BidRequest{
 				ID:   "test-id",
-				Imp:  []Imp{{ID: "1"}},
+				Imp:  []Imp{{ID: "1", Banner: &Banner{}}},
 				Site: &Site{},
 			},
 			wantErr: nil,
@@ -24,7 +24,7 @@ func TestBidRequest(t *testing.T) {
 			name: "valid request with app",
 			request: &BidRequest{
 				ID:  "test-id",
-				Imp: []Imp{{ID: "1"}},
+				Imp: []Imp{{ID: "1", Banner: &Banner{}}},
 				App: &App{},
 			},
 			wantErr: nil,
@@ -109,7 +109,7 @@ func TestBidRequest(t *testing.T) {
 				return
 			}
 			if err != nil {
-				t.Errorf("BidRequest.Validate() unexpected error = %v", err)
+				t.Errorf("BidRequest.Validate() error = %v, wantErr = nil", err)
 			}
 		})
 	}
