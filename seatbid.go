@@ -15,7 +15,6 @@ type SeatBid struct {
 	Ext   interface{}  `json:"ext,omitempty"`
 }
 
-
 func (sb *SeatBid) Validate() error {
 	if len(sb.Bids) == 0 {
 		return ErrInvalidBids

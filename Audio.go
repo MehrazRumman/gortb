@@ -6,7 +6,7 @@ import (
 
 // Validation errors for Audio
 var (
-	ErrMissingMIMEs = errors.New("audio missing required MIMEs")
+	ErrMissingMIMEsAudio = errors.New("audio missing required MIMEs")
 )
 
 type Audio struct {
@@ -35,7 +35,7 @@ type Audio struct {
 func (a *Audio) Validate() error {
 	// Check required fields
 	if len(a.MIMEs) == 0 {
-		return ErrMissingMIMEs
+		return ErrMissingMIMEsAudio
 	}
 
 	return nil

@@ -1,7 +1,11 @@
 package gortb
 
+import(
+	"errors"
+)
+
 var (
-	ErrMissingMIMEs = errors.New("video mimes are required")
+	ErrMissingMIMEsVideo = errors.New("video mimes are required")
 	ErrMissingDimensions = errors.New("video width and height are required")
 )
 
@@ -38,7 +42,7 @@ type Video struct {
 // Validate checks if the Video object meets OpenRTB requirements
 func (v *Video) Validate() error {
 	if len(v.MIMEs) == 0 {
-		return ErrMissingMIMEs
+		return ErrMissingMIMEsVideo
 	}
 
 	if v.W == 0 || v.H == 0 {

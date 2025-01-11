@@ -9,9 +9,6 @@ var (
 	ErrMissingBidID = errors.New("bid missing required ID")
 	ErrMissingImpID = errors.New("bid missing required impression ID") 
 	ErrInvalidPrice = errors.New("bid price must be greater than 0")
-	ErrInvalidAPI = errors.New("bid API must be between 1 and 6")
-	ErrInvalidProtocol = errors.New("bid protocol must be between 1 and 10")
-	ErrInvalidQAGMediaRating = errors.New("bid QAG media rating must be between 1 and 3")
 )
 
 type Bid struct {

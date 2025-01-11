@@ -28,7 +28,7 @@ func TestAudio(t *testing.T) {
 			audio: &Audio{
 				StartDelay: 0,
 			},
-			wantErr: ErrMissingMIMEs,
+			wantErr: ErrMissingMIMEsAudio,
 		},
 	}
 

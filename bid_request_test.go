@@ -86,7 +86,6 @@ func TestBidRequest(t *testing.T) {
 	}
 }
 
-
 func TestBidRequestWithJSON(t *testing.T) {
 	jsonData := `{
 		"id": "test-id",
