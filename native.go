@@ -1,3 +1,5 @@
+package gortb
+
 type Native struct {
 	Request string `json:"request" binding:"required"`
 	Ver     string `json:"ver,omitempty"`

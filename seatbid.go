@@ -1,3 +1,5 @@
+package gortb
+
 type SeatBid struct {
 	Bids  []Bid        `json:"bid" binding:"required"`
 	Seat  string       `json:"seat,omitempty"`

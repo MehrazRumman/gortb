@@ -1,3 +1,6 @@
+package gortb
+
+
 type Bid struct {
 	ID            string      `json:"id" binding:"required"`
 	ImpID         string      `json:"impid" binding:"required"`

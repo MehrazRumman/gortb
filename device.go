@@ -1,3 +1,5 @@
+package gortb
+
 type Device struct {
 	UA             string   `json:"ua,omitempty"`
 	Geo            *Geo     `json:"geo,omitempty" `

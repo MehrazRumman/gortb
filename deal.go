@@ -1,3 +1,5 @@
+package gortb
+
 type Deal struct {
 	ID         string   `json:"id" binding:"required"`
 	BidFloor   float64  `json:"bidfloor,omitempty" default:"0"`

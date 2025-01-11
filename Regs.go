@@ -1,3 +1,5 @@
+package gortb
+
 
 type Regs struct {
 	COPPA int         `json:"coppa,omitempty"`

@@ -1,3 +1,5 @@
+package gortb
+
 type Banner struct {
 	Format       []Format `json:"format,omitempty"`
 	W            int      `json:"w"`

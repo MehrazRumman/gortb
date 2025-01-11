@@ -1,3 +1,5 @@
+package gortb
+
 type Site struct {
 	ID           string   `json:"id,omitempty"`
 	Name         string   `json:"name,omitempty"`

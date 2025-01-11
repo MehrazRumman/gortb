@@ -1,3 +1,5 @@
+package gortb
+
 type Audio struct {
 	MIMEs        []string `json:"mimes" binding:"required"`
 	MinDuration  int      `json:"minduration,omitempty"`

@@ -1,3 +1,5 @@
+package gortb
+
 type Metric struct {
 	Type   string  `json:"type" binding:"required"`
 	Value  float64 `json:"value" binding:"required"`

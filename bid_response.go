@@ -1,3 +1,5 @@
+package gortb
+
 
 type BidResponse struct {
 	ID         string       `json:"id" binding:"required"`

@@ -1,3 +1,5 @@
+package gortb
+
 type User struct {
 	ID         string      `json:"id,omitempty"`
 	BuyerUID   string      `json:"buyeruid,omitempty"`

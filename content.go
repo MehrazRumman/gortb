@@ -1,3 +1,5 @@
+package gortb
+
 type Content struct {
 	ID                string   `json:"id,omitempty"`
 	Episode           int      `json:"episode,omitempty"`

@@ -1,3 +1,5 @@
+package gortb
+
 
 type Publisher struct {
 	ID    string   `json:"id,omitempty"`

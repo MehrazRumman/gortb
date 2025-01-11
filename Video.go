@@ -1,3 +1,5 @@
+package gortb
+
 type Video struct {
 	MIMEs        []string `json:"mimes" binding:"required"`
 	MinDuration  int      `json:"minduration,omitempty"`

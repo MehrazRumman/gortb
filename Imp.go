@@ -1,8 +1,6 @@
 package gortb
 
 
-
-
 type Imp struct {
 	ID           string    `json:"id" binding:"required"`
 	Metric       []Metric  `json:"metric,omitempty"`
