@@ -5,7 +5,7 @@ import (
 	"errors"
 )
 
-func TestBidRequest_Validate(t *testing.T) {
+func TestBidRequest(t *testing.T) {
 	tests := []struct {
 		name    string
 		request *BidRequest
