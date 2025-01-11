@@ -1,3 +1,3 @@
 module github.com/MehrazRumman/gortb
 
-go 1.23.4
+go 1.13
