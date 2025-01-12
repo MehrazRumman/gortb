@@ -91,4 +91,4 @@ If you encounter any issues or have questions, please file an issue on the [GitH
 
 ## Version
 
-Current version: v0.1.0 
+Current version: v1.0.0 
