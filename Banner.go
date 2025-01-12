@@ -7,29 +7,29 @@ import (
 // Validation errors for Banner
 var (
 	ErrInvalidBannerDimensions = errors.New("banner must have either w/h or format specified")
-	ErrInvalidTopFrame = errors.New("banner topframe must be 0 or 1")
-	ErrInvalidVCM = errors.New("banner vcm must be 0 or 1")
-	ErrInvalidExpDir = errors.New("banner expdir must be between 1 and 6")
+	ErrInvalidTopFrame         = errors.New("banner topframe must be 0 or 1")
+	ErrInvalidVCM              = errors.New("banner vcm must be 0 or 1")
+	ErrInvalidExpDir           = errors.New("banner expdir must be between 1 and 6")
 )
 
 type Banner struct {
-	Format       []Format `json:"format,omitempty"`
-	W            int      `json:"w"`
-	H            int      `json:"h"`
-	WMax         int      `json:"wmax,omitempty"`    // Deprecated
-	HMax         int      `json:"hmax,omitempty"`    // Deprecated
-	WMin         int      `json:"wmin,omitempty"`    // Deprecated
-	HMin         int      `json:"hmin,omitempty"`    // Deprecated
-	BType        []int    `json:"btype,omitempty"`
-	BAttr        []int    `json:"battr,omitempty"`
-	Pos          int      `json:"pos,omitempty"`
-	Mimes        []string `json:"mimes,omitempty"`
-	TopFrame     int      `json:"topframe,omitempty"`
-	ExpDir       int      `json:"expdir,omitempty"`
-	API          []int    `json:"api,omitempty"`
-	ID           string   `json:"id,omitempty"`
-	VCM          int      `json:"vcm,omitempty"`
-	Ext          interface{} `json:"ext,omitempty"`
+	Format   []Format    `json:"format,omitempty"`
+	W        int         `json:"w"`
+	H        int         `json:"h"`
+	WMax     int         `json:"wmax,omitempty"` // Deprecated
+	HMax     int         `json:"hmax,omitempty"` // Deprecated
+	WMin     int         `json:"wmin,omitempty"` // Deprecated
+	HMin     int         `json:"hmin,omitempty"` // Deprecated
+	BType    []int       `json:"btype,omitempty"`
+	BAttr    []int       `json:"battr,omitempty"`
+	Pos      int         `json:"pos,omitempty"`
+	Mimes    []string    `json:"mimes,omitempty"`
+	TopFrame int         `json:"topframe,omitempty"`
+	ExpDir   int         `json:"expdir,omitempty"`
+	API      []int       `json:"api,omitempty"`
+	ID       string      `json:"id,omitempty"`
+	VCM      int         `json:"vcm,omitempty"`
+	Ext      interface{} `json:"ext,omitempty"`
 }
 
 // Validate performs validation on the Banner object according to OpenRTB 2.5 rules

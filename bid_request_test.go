@@ -1,9 +1,9 @@
 package gortb
 
 import (
-	"testing"
-	"errors"
 	"encoding/json"
+	"errors"
+	"testing"
 )
 
 func TestBidRequest(t *testing.T) {

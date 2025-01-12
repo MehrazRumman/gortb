@@ -7,17 +7,17 @@ import (
 // Validation errors for BidResponse
 var (
 	ErrMissingResponseID = errors.New("bid response missing required ID")
-	ErrMissingSeatBids = errors.New("bid response missing required seat bids")
+	ErrMissingSeatBids   = errors.New("bid response missing required seat bids")
 )
 
 type BidResponse struct {
-	ID         string       `json:"id" binding:"required"`
-	SeatBids   []SeatBid    `json:"seatbid" binding:"required"`
-	BidID      string       `json:"bidid,omitempty"`
-	Cur        string       `json:"cur,omitempty" default:"USD"`
-	CustomData string       `json:"customdata,omitempty"`
-	NBR        int          `json:"nbr,omitempty"`
-	Ext        interface{}  `json:"ext,omitempty"`
+	ID         string      `json:"id" binding:"required"`
+	SeatBids   []SeatBid   `json:"seatbid" binding:"required"`
+	BidID      string      `json:"bidid,omitempty"`
+	Cur        string      `json:"cur,omitempty" default:"USD"`
+	CustomData string      `json:"customdata,omitempty"`
+	NBR        int         `json:"nbr,omitempty"`
+	Ext        interface{} `json:"ext,omitempty"`
 }
 
 // Validate performs validation on the BidResponse object according to OpenRTB 2.5 rules
