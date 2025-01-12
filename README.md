@@ -2,6 +2,9 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/MehrazRumman/gortb.svg)](https://pkg.go.dev/github.com/MehrazRumman/gortb)
 [![Go Test](https://github.com/MehrazRumman/gortb/actions/workflows/go.yml/badge.svg)](https://github.com/MehrazRumman/gortb/actions/workflows/go.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/MehrazRumman/gortb)](https://goreportcard.com/report/github.com/MehrazRumman/gortb)
+
+
 
 
 GoRTB is a Go implementation of the OpenRTB (Real-Time Bidding) 2.5 specification. This library provides a robust and type-safe way to work with OpenRTB requests and responses in your Go applications.
