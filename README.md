@@ -7,6 +7,7 @@
 
 
 
+
 GoRTB is a Go implementation of the OpenRTB (Real-Time Bidding) 2.5 specification. This library provides a robust and type-safe way to work with OpenRTB requests and responses in your Go applications.
 
 ## Go Version Support
